@@ -1,5 +1,5 @@
 import unittest
-from ..src.solver import Solver
+from sudoku.src.solver import Solver
 
 class TestSolverMethods(unittest.TestCase):
     

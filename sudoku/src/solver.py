@@ -2,8 +2,7 @@ from collections import defaultdict
 
 class Solver:
     def __init__(self) -> None:
-        self.rows = 3 
-        self.board = [[0] * self.rows for i in range(self.rows)]
+        self.board = [[0] * 9 for i in range(9)]
 
     def is_valid(self):
         '''
@@ -47,6 +46,3 @@ class Solver:
                     else:
                         return False
         return True
-
-if __name__ == '__main__':
-    solver = Solver()
