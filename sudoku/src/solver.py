@@ -1,8 +1,10 @@
 from collections import defaultdict
 
+def function1():
+    print("Some stupid fucntion")
 class Solver:
-    def __init__(self) -> None:
-        self.board = [[0] * 9 for i in range(9)]
+    def __init__(self, board) -> None:
+        self.board = [[x for x in row] for row in board]
 
     def is_valid(self):
         '''
@@ -24,7 +26,7 @@ class Solver:
         for i in range(n):
             for j in range(n):
                 cur = self.board[i][j]
-                if cur != '':
+                if cur != '.':
                     
                     k = (i // 3 ) * 3 + j // 3
                 
@@ -46,3 +48,6 @@ class Solver:
                     else:
                         return False
         return True
+
+    def solve_sudoku(board):
+        return False
