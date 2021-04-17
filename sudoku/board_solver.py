@@ -1,12 +1,29 @@
 from collections import defaultdict
 
-def function1():
-    print("Some stupid fucntion")
-class Solver:
+"""
+    This call will handle all the functionalities that are associated with board
+    solving the given board.
+
+    For examples: 
+        - Passing in a 9x9 sudoku board will allow this 
+        board = [[ '1', '', '' ...],
+                 [ '6', '', '7', ...],
+                 .
+                 .
+                 .
+                ]
+    sudoku = BoardSolver(board)
+    isValidBoard(sudoku) => return a boolean value
+"""
+
+class BoardSolver:
     def __init__(self, board) -> None:
         self.board = [[x for x in row] for row in board]
+    
+    def __repr__(self) -> str:
+        return {{self.__class__.__name__}.format(self=self)}
 
-    def is_valid(self):
+    def is_valid(self) -> bool:
         '''
         Determines if sudoku constraints are maintained for the following board
         - All the rows have only one number [1-9]
@@ -48,6 +65,3 @@ class Solver:
                     else:
                         return False
         return True
-
-    def solve_sudoku(board):
-        return False

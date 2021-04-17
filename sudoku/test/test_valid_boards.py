@@ -1,7 +1,5 @@
 import unittest
-import src 
-
-from  src.src import Solver 
+from sudoku.board_solver import BoardSolver 
 
 class TestSolverMethods(unittest.TestCase):
     
@@ -24,10 +22,14 @@ class TestSolverMethods(unittest.TestCase):
                 ,[".","6",".",".",".",".","2","8","."]
                 ,[".",".",".","4","1","9",".",".","5"]
                 ,[".",".",".",".","8",".",".","7","9"]]
-        s1 = Solver(board_1)
-        s2 = Solver(board_2)
+
+        s1 = BoardSolver(board_1)
+        s2 = BoardSolver(board_2)
+
         self.assertEqual(s1.is_valid(), True, "Failed the test for board2")
         self.assertEqual(s2.is_valid(), False, "Failed the test for board3")
+        self.assertNotEqual(board_1, board_2, "The boards are not equal")
 
 if __name__ == '__main__':
     unittest.main()
+
